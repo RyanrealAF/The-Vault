@@ -8,6 +8,10 @@ A curated material library, tactical knowledge base, and AI-driven design adviso
 
 This application serves as a digital sanctuary for the "Doctrine of Dark Elegance," a philosophical and aesthetic framework that prioritizes truth, silence, and resilience over noise and superficiality. It combines a visual library of materials and design principles with a repository of tactical documents analyzing psychological warfare and social manipulation.
 
+### The Vault
+Explore the project's origins and source materials here:
+[https://ryanrealaf.github.io/The-Vault/](https://ryanrealaf.github.io/The-Vault/)
+
 ## Features
 
 ### 1. Visual & Sensory Foundations

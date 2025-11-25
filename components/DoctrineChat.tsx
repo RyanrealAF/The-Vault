@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageSquare, X, Send, Loader2 } from 'lucide-react';
 import { sendMessageStream } from '../services/geminiService';
@@ -53,8 +54,16 @@ export const DoctrineChat: React.FC = () => {
     }
   };
 
-  if (!process.env.API_KEY) {
-      // Don't render chat if no API key is present
+  // Safe check for API key availability
+  const hasApiKey = (() => {
+    try {
+      return typeof process !== 'undefined' && process.env && process.env.API_KEY;
+    } catch (e) {
+      return false;
+    }
+  })();
+
+  if (!hasApiKey) {
       return null; 
   }
 

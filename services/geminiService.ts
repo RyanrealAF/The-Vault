@@ -1,3 +1,4 @@
+
 import { GoogleGenAI, Chat, GenerateContentResponse } from "@google/genai";
 import { SYSTEM_INSTRUCTION } from '../constants';
 
@@ -5,14 +6,19 @@ let ai: GoogleGenAI | null = null;
 let chatSession: Chat | null = null;
 
 const initializeAI = () => {
-  if (!process.env.API_KEY) {
-    console.warn("Gemini API Key is missing. Chat functionality will be limited.");
+  try {
+    if (typeof process === 'undefined' || !process.env || !process.env.API_KEY) {
+      console.warn("Gemini API Key is missing. Chat functionality will be limited.");
+      return null;
+    }
+    if (!ai) {
+      ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    }
+    return ai;
+  } catch (error) {
+    console.error("Failed to initialize AI:", error);
     return null;
   }
-  if (!ai) {
-    ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-  }
-  return ai;
 };
 
 export const getChatSession = (): Chat => {
