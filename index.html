@@ -4,33 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctrine of Dark Elegance</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        dark: {
-                            bg: '#1a1a1a',
-                            card: '#2b2b2b',
-                            surface: '#252525',
+        // Define Tailwind config before loading the script to ensure it's picked up immediately
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        colors: {
+                            dark: {
+                                bg: '#1a1a1a',
+                                card: '#2b2b2b',
+                                surface: '#252525',
+                            },
+                            accent: {
+                                bronze: '#ffd166',
+                                muted: '#e0c060',
+                            },
+                            text: {
+                                main: '#e0e0e0',
+                                muted: '#a0a0a0',
+                            }
                         },
-                        accent: {
-                            bronze: '#ffd166',
-                            muted: '#e0c060',
-                        },
-                        text: {
-                            main: '#e0e0e0',
-                            muted: '#a0a0a0',
+                        fontFamily: {
+                            sans: ['Inter', 'sans-serif'],
                         }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
